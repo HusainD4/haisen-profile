@@ -1,0 +1,43 @@
+<!doctype html>
+<html class="scroll-smooth light" lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>HAISEN OFFICIAL - Solusi Digital Profesional</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;0,900;1,900&family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}" />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "background": "#F5F5F0", "surface": "#FFFFFF", "on-surface": "#111111", "on-surface-variant": "#555555", 
+              "primary": "#111111", "primary-container": "#FFD600", "on-primary": "#FFD600", "on-primary-container": "#111111", 
+              "secondary": "#555555", "secondary-container": "#FFAB00", "on-secondary-container": "#111111", "on-secondary": "#FFFFFF", 
+              "tertiary": "#F9A825", "tertiary-container": "#FFF8E1", "on-tertiary-container": "#333333", "on-tertiary": "#111111", 
+              "inverse-surface": "#121212", "inverse-on-surface": "#F5F5F0", "surface-container-low": "#F9F9F4", "surface-container": "#F0F0EB", 
+              "outline": "#888888", "outline-variant": "#D0D0CB", "error": "#BA1A1A"
+            },
+            borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" },
+            spacing: { unit: "8px", "section-gap": "120px", "margin-desktop": "64px", "margin-mobile": "16px", gutter: "24px" },
+            fontFamily: { "headline-md": ["Montserrat"], "body-md": ["Inter"], "display-lg-mobile": ["Montserrat"], "body-lg": ["Inter"], "display-lg": ["Montserrat"], "label-bold": ["Inter"], "headline-lg": ["Montserrat"], "label-sm": ["Inter"] }
+          }
+        }
+      };
+    </script>
+  </head>
+  <body class="bg-background text-on-surface font-body-md antialiased overflow-x-hidden flex flex-col min-h-screen">
+    
+    {% include 'utils/navbar.html' %}
+    
+    <main class="flex-grow pt-20">
+      {% block content %}{% endblock %}
+    </main>
+
+    {% include 'utils/footer.html' %}
+
+  </body>
+</html>
